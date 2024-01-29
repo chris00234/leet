@@ -31,7 +31,6 @@ class Solution:
         while current_left_ind < len(height) - 1 and current_right_ind > 0:
             current_left_ind += offset
             current_right_ind -= offset
-            print("left = %d, right = %d", left, right)
             if height[current_left_ind] - left >= 2:
                 left = height[current_left_ind]
                 width -= 1
