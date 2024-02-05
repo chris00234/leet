@@ -16,11 +16,11 @@ class Solution:
         j = 0
         
         while True:
-            num1 = nums1[i]
-            if len(nums2) != 0:
-                num2 = nums2[j]
-            else:
+            if j >= (n) or i >= (length):
                 break
+            num1 = nums1[i]
+            num2 = nums2[j]
+            # print(num1, num2)
             if num1 <= num2:
                 if num1 == 0:
                     nums1[i] = num2
@@ -28,23 +28,15 @@ class Solution:
                     j += 1
                 else:
                     i += 1
-                
             else:
-                if i >= m - 1:
-                    nums1[i] = num2
-                num_list = nums1[i: -1]
-                nums1[i] = num2
-                nums1 = nums1[:i +1] + num_list
-                print(nums1)
-                i += 1
-                j += 1
-                    
-            if i >= m or j >= n:
-                break
-        # 1 2 3 4 0
-        # 1 2 2 4 0
-        # 1 2 2 3 4
-            
+                if num1 != 0:
+                    nums1.insert(i - 1, num2)
+                    i += 1
+                    j += 1
+        
+        for i in range(length, len(nums1)):
+            nums1.pop()
+      
 
 
 if __name__ == '__main__':
