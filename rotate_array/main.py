@@ -4,8 +4,8 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         
-        for i in range(k):
-            nums[:] = [nums[-1]] + nums[:-1]
+        k = k % len(nums)
+        nums[:] = nums[len(nums) - k :] + nums[:len(nums) - k]
         
             
 
@@ -13,4 +13,3 @@ class Solution:
 ans = Solution()
 nums = [1,2,3,4,5,6,7]
 ans.rotate(nums, 3)
-print(nums)
