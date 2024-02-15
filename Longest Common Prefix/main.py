@@ -25,25 +25,26 @@ strs[i] consists of only lowercase English letters.
 
 class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
+        common = ""
+        pos = 0
+        min_word = 100000
+        for word in strs:
+            if min_word > len(word):
+                min_word = len(word)
         
-        length = 200
-        for w in strs:
-            if length > len(w):
-                length = len(w)
-        
-        result = ""
-        ind = 0
-        same = False
-        for ind in range(length):
-            letter = strs[0][ind]
-            for word in strs:
-                if letter == word[ind]:
-                    same = True
-                else:
-                    same = False
-            if same == True:
-                result += letter
-        return result
+
+        for pos in range(min_word):
+            if pos >= min_word:
+                break
+            char = word[pos]
+            for w in strs:
+                if char != w[pos]:
+                    char = ""
+            if char == "":
+                break
+            common += char
+            # pos += 1
+        return common
 
 
 if __name__ == '__main__':
