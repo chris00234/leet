@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/chris/Documents_local/leet_code/Diameter_of_binary_tree",
+      "program": "/Users/chris/Documents_local/leet_code/Diameter_of_binary_tree/build/Debug/outDebug"
+    }
+  ]
+}
